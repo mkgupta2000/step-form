@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.1/lumen/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./formProgressBar.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="formProgressBar.jquery.js"></script>
+    <style>
+        
+       
+        .custom-control-label::before {
+         background-color: #ffffff;
+         top: 0rem !important;
+          }
+        .radio-cstm-label{
+         font-size:14px !important;
+           }
+@media only screen and (max-width: 600px) {
+  .radio-cstm-label{
+    font-size:10px !important;
+}
+}
+    </style>
+</head>
+<body>
+
+ 
+    <div class="container-fluid ">
+        <div class="row mt-3 display-flex justify-content-center">
+          <div class="col-lg-6 col-sm-12">
+            <div class="card">
+                <span></span>
+              <div class="card-body pt-1 pb-3">
+               
+                <h4 class="card-title text-center text-danger cstm-head">Let's get started</h4>
+                <h6 class="card-title text-center mb-2 cstm-sub-head">Add your details as per your registered record </h6>
+                 <form id="myForm">
+                    <fieldset class="step">
+                        <div class="row">
+                           
+                            <div class="col-md-12 mb-3 ">
+                                
+                                <label for="firstName" class="font-weight-bold"> Name</label>
+                                <input name="firstname" type="text" class="form-cstm" id="firstName" placeholder="Enter your name" value="" required>
+                             </div>
+                         
+                            <div class="col-md-12 mb-3" style="display: flex;flex-direction: column;">
+                                <label class="font-weight-bold" >Natur of Driving License</label>
+                               <div style="display: flex;justify-content: space-between;">
+                                <div class="custom-radio" >
+                                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input form-cstm" required>
+                                    <label class="custom-control-label radio-cstm-label" for="credit"> &nbsp; &nbsp; Private</label>
+                                </div>
+                                    <div class="custom-radio">
+                                        <input id="commercial" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                        <label class="custom-control-label radio-cstm-label" for="commercial">  &nbsp; &nbsp; Commercial</label>
+                                    </div>
+                                    </div>
+                               
+                               
+                            </div>
+                            <div class="col-md-12 mb-3" style="display: flex;flex-direction: column;">
+                                <label class="font-weight-bold" >Type Previous of Driving License</label>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <div class=" custom-radio">
+                                        <input id="credit1" name="payment" type="radio" class="custom-control-input" required>
+                                        <label class="custom-control-label radio-cstm-label" for="credit1"> &nbsp; &nbsp; Paper Driving License </label>
+                                </div>
+                                    <div class=" custom-radio">
+                                        <input id="commercial1" name="payment" type="radio" class="custom-control-input" required>
+                                        <label class="custom-control-label radio-cstm-label" for="commercial1"> &nbsp; &nbsp; Smart Driving License</label>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                          
+                        </div>
+                        <div class="text-center">
+                        <button type="button" class=" btn btn-danger prev-step"><i class="fa-solid fa-chevron-left icon-cstm" ></i>Back</button>
+                    </div>
+                    </fieldset>
+                
+                    <fieldset class="step">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label for="address" class="font-weight-bold">Palce where Driving License was issued</label>
+                                <input name="address" type="text" class="form-cstm" id="address" placeholder="1234 Main St" required>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="country" class="font-weight-bold">Issued Year of License</label>
+                                <select size="1" name="country" required >
+                                    <option value="">Select an option</option>
+                                    <option value="1">First option</option>
+                                    <option value="2">Second option</option>
+                                    <option value="3">Third option</option>
+                                    <option value="4">Fourth option</option>
+                                    <option value="5">Fifth option</option>
+                                  </select>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="state" class="font-weight-bold">Type of Previous Driving License</label>
+                                <select name="state" id="state" required>
+                                    <option value="">Choose...</option>
+                                    <option>California</option>
+                                    <option>Texas</option>
+                                    <option>Noth Dakota</option>
+                                    <option>South Dakota</option>
+                                    <option>Washington</option>
+                                    <option>Detroit</option>
+
+                                </select>
+                            </div>
+                           
+                        </div>
+                        <div class="text-center">
+                        <button type="button" class="btn btn-danger prev-step">Back</button>
+                    </div>
+                    </fieldset>
+                
+                  
+                </form>
+            </div>
+             
+            
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <script>
+    
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const selects = document.querySelectorAll('select');
+// Loop through each <select> element
+    selects.forEach(select => {
+  select.addEventListener('focus', () => {
+    select.size = 5;
+    select.classList.add('fadeIn');
+    select.classList.remove('fadeOut');
+    select.style.backgroundColor = '#F8F8FF'; // Set background color to gray
+  });
+
+  select.addEventListener('blur', () => {
+    select.size = 1;
+    select.classList.add('fadeOut');
+    select.classList.remove('fadeIn');
+    select.style.backgroundColor = '#e9e9e9'; // Set background color to gray
+  });
+
+  select.addEventListener('change', () => {
+    select.size = 1;
+    select.blur();
+    select.style.backgroundColor = '#e9e9e9'; // Set background color to gray
+  });
+
+  select.addEventListener('mouseover', () => {
+    if (select.size == 1) {
+      select.style.backgroundColor = '';
+    }
+  });
+
+  select.addEventListener('mouseout', () => {
+    if (select.size == 1) {
+      select.style.backgroundColor = '#e9e9e9'; // Set background color to gray
+    }
+  });
+});
+});
+      </script>
+
+
+
+<script>
+        var elem = $("form").formProgressBar({transitionTime: 500});
+    </script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
